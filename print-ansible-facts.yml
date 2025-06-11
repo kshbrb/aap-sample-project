@@ -1,0 +1,14 @@
+---
+- name: Simple playbook that prints out specific ansible facts
+  hosts: localhost
+  
+  tasks:
+
+  - name: Print ansible product version
+    ansible.builtin.debug:
+      var: "{{ ansible_facts['ansible_product_version'] }}"
+
+  - name: Print ansible python version
+    ansible.builtin.debug:
+      var: "{{ ansible_facts['ansible_python_version'] }}"
+
